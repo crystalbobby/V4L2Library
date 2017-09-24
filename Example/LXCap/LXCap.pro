@@ -1,19 +1,19 @@
-#-------------------------------------------------
-#
-# Project created by QtCreator 2017-09-09T20:50:10
-#
-#-------------------------------------------------
-
 QT       += core gui multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = LXCap
 TEMPLATE = app
+DESTDIR += bin
+UI_DIR += ui
+RCC_DIR += qrc
+MOC_DIR += moc
+OBJECTS_DIR += obj
+CONFIG+=qt warn_off release
 
 INCLUDEPATH += ../../Library ui
 
-SOURCES += main.cpp\
+SOURCES += src/main.cpp\
         ui/lxcap.cpp \
     ../../Library/libv4l2.cpp \
     ui/filterwindow.cpp \
