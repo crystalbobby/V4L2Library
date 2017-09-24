@@ -1,0 +1,25 @@
+#!/bin/sh
+
+qmake5="/usr/lib/x86_64-linux-gnu/qt5/bin/qmake"
+qt_lib_multimedia="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_multimedia.pri"
+
+if [ ! -f "$qmake5" ]; then
+  echo "ERROR: qt5-qmake does not exist"
+  echo "try 'sudo apt install qt5-qmake'"
+  exit 0
+fi
+
+if [ ! -f "$qt_lib_multimedia" ]; then
+  echo "ERROR: qtmultimedia5 does not exist"
+  echo "try sudo apt install qtmultimedia5-dev"
+  exit 0
+fi
+
+$qmake5
+if [ $? -eq 0 ];then
+  echo "Makefile create successful!"
+  echo "Run 'make' to compile the package"
+else
+  echo "ERROR: Makefile create faild!!"
+  exit 0
+fi
